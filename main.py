@@ -3,9 +3,9 @@
 # c --> 01
 # G --> 10
 
-class To_Dna:
+class TO_DNA:
 
-    def BinToDna(self,Bin):
+    def bin_to_dna(self,Bin):
         Dna = ''
         for i in range(0, len(Bin), 2):
             if Bin[i] != '0' and Bin[i] != '1':
@@ -24,7 +24,7 @@ class To_Dna:
                     Dna = Dna + 'G'
         return Dna
 
-    def TxtToBin(self,txt):
+    def txt_to_bin(self,txt):
         binaire = ''
         binary = ''
         for lettre in txt:
@@ -37,23 +37,23 @@ class To_Dna:
                 binaire = '0' + binaire
         return binaire
 
-    def TxtToDna(self,txt):
+    def txt_to_dna(self,txt):
         Dna = ''
         bin = 0
         for elt in txt:
-            bin = self.TxtToBin(elt)
-            Dna = Dna + self.BinToDna(bin)
+            bin = self.txt_to_bin(elt)
+            Dna = Dna + self.bin_to_dna(bin)
         return Dna
 
 
 class To_Txt:
 
-    def DnaToTxt(self,Dna):
-        bin = self.DnaToBin(Dna)
-        txt = self.BinToTxt(bin)
+    def dna_to_txt(self,Dna):
+        bin = self.dna_to_bin(Dna)
+        txt = self.bin_to_txt(bin)
         return txt
 
-    def DnaToBin(self,Dna):
+    def dna_to_bin(self,Dna):
         bin = ''
         for i in range(len(Dna)):
             if Dna[i] == 'A':
@@ -66,7 +66,7 @@ class To_Txt:
                 bin = bin + '10'
         return bin
 
-    def BinToTxt(self,Bin):
+    def bin_to_txt(self,Bin):
         txt = ''
         cpt = 0
         for i in range(0, len(Bin) // 8):
@@ -76,13 +76,13 @@ class To_Txt:
             cpt += 8
         return txt
 
-ToDna = To_Dna()
+ToDna = TO_DNA()
 ToTxt = To_Txt()
 
 txt = "Hello World. Today we will try to convert txt to dna"
 
-dna = ToDna.TxtToDna(txt)
+dna = ToDna.txt_to_dna(txt)
 
-txt_fin = ToTxt.DnaToTxt(dna)
+txt_fin = ToTxt.dna_to_txt(dna)
 
 print(txt_fin)
