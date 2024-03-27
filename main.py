@@ -79,7 +79,7 @@ class To_Txt:
 ToDna = TO_DNA()
 ToTxt = To_Txt()
 
-txt = "Hello World. Today we will try to convert txt to dna"
+txt = "test"
 
 dna = ToDna.txt_to_dna(txt)
 
