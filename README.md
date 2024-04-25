@@ -5,3 +5,5 @@
 
 
 <h2>Decoding DNA to text</h2>
+
+<a href=https://colab.research.google.com/drive/11MJpqMwnypRpESVBnsw08-QpNiOiGsi1?usp=sharing><h4>Colab notebook</h4></a>
